@@ -25,7 +25,7 @@ p {
 
 #image-gallery {
 	position: relative;
-	width: 600px; 
+	width: 300px; 
 	margin: 0 auto;
 }
 
@@ -76,4 +76,5 @@ p {
 	0% {transform: rotate(0deg);}
 	100% {transform: rotate(360deg);}
 }
+
 
