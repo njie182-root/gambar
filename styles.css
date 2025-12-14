@@ -1,79 +1,84 @@
-/* Reset Dasar */
-body, h1, p, iframe, footer {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.intro { 
+	text-align: center;
+	font-family: Arial;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7f9;
-    color: #333;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Agar footer berada di bawah */
+.grid-container { 
+	text-align: center;
+	background: #DCDCDC;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 20px;
+	margin-bottom: 22px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 18px;
+	padding-bottom: 20px;
+	/* row-gap: 20px; */
+	grid-template-columns: repeat(auto-fill, 280px);
+	justify-content: space-around;
 }
 
-/* Header */
-header {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+h2 { 
+	font-size: 36px;
 }
 
-header h1 {
-    margin-bottom: 5px;
+p { 
+ 	font-size: 14pt;
 }
 
-/* Main Content dan PDF Container */
-.pdf-container {
-    flex-grow: 1; /* Memastikan container mengambil ruang sisa */
-    max-width: 1200px;
-    width: 90%; /* Responsif */
-    margin: 30px auto;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+#image-gallery {
+	position: relative;
+	width: 600px; 
+	margin: 0 auto;
 }
 
-/* Iframe untuk PDF */
-.pdf-container iframe {
-    width: 100%;
-    /* Atur tinggi agar PDF terlihat jelas. Gunakan satuan viewport height (vh) 
-       atau nilai piksel yang besar */
-    height: 75vh; 
-    min-height: 500px; /* Tinggi minimum yang masuk akal */
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#current-image {
+	position: relative;
+	width: 100%;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px 0;
-    background-color: #e2e6ea;
-    color: #666;
-    border-top: 1px solid #ddd;
-    margin-top: auto; /* Mendorong footer ke bawah */
+#overlay {
+	visibility: hidden;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
-/* Responsivitas (Untuk layar yang lebih kecil) */
-@media (max-width: 768px) {
-    header {
-        padding: 15px 10px;
-    }
-    
-    .pdf-container {
-        width: 95%;
-        padding: 15px;
-    }
+.thumb {
+ 	width: 280px;
+  	/* height: 280px; */
+	margin: 0px;
+	padding-top: 22px;
+	padding-bottom: 22px;
+	/* padding: 0px; */
+	color: white;
+	font-size: 60px;
+	font-weight: bold;
+	text-align: center;
+	align-items: center;
+	cursor: pointer;
+}
 
-    .pdf-container iframe {
-        height: 70vh; /* Sedikit lebih pendek di mobile */
-        min-height: 400px;
-    }
+#image-thumbs {
+	justify-content: center;
+}
+
+.loading-spinner {
+	width: 57px;
+	height: 57px;
+	border: 7px solid #aaaaaa; /* gray */
+	border-bottom-color: transparent;
+	border-radius: 50%;
+	display: inline-block;
+	box-sizing: border-box;
+	animation: rotation 1s linear infinite;
+	}
+
+@keyframes rotation {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
 }
